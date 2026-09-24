@@ -1,0 +1,6 @@
+{
+  "name": "Mapeamento FTTH - Rede Óptica",
+  "description": "Sistema completo de mapeamento de redes de fibra óptica FTTH com suporte integrado a 3 motores de mapa (Google Maps, OpenMAP [OpenStreetMap] e LeaFlat [leafletjs.com]), traçado de rotas, reservas técnicas, CTOs, CEOs, POP, postes, diagrama unifilar e ferramenta de estimativa de materiais e pré-orçamento.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
