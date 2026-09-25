@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "projects": {
+      "title": "Projetos de Rede FTTH",
+      "description": "Armazena a topologia completa da rede: cabos, CTOs, CEOs, POPs, reservas técnicas, postes e conexões.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "cables": { "type": "array" },
+        "pops": { "type": "array" },
+        "ceos": { "type": "array" },
+        "ctos": { "type": "array" },
+        "technicalSlacks": { "type": "array" },
+        "poles": { "type": "array" },
+        "mapCenter": { "type": "object" },
+        "defaultZoom": { "type": "number" },
+        "updatedAt": { "type": "string" },
+        "updatedBy": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "users": {
+      "title": "Usuários do Sistema FTTH",
+      "description": "Credenciais, perfis (admin, técnico, visualizador), projetos liberados e permissões granulares.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "password": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "avatarColor": { "type": "string" },
+        "allowedProjectIds": { "type": "array" },
+        "createdAt": { "type": "string" },
+        "lastLogin": { "type": "string" }
+      },
+      "required": ["id", "username", "role"]
+    },
+    "snapshots": {
+      "title": "Histórico de Versões e Snapshots da Rede",
+      "description": "Histórico com pontos de restauração e rollback da rede salvos no banco de dados.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "projectId": { "type": "string" },
+        "label": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "user": { "type": "string" },
+        "nodesCount": { "type": "number" },
+        "cablesCount": { "type": "number" },
+        "projectData": { "type": "object" }
+      },
+      "required": ["id", "projectId", "timestamp"]
+    }
+  }
+}

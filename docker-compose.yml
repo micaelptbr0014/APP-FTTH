@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  portalnet-ftth:
+    container_name: portalnet-ftth
+    image: portalnet-ftth:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      # Porta externa : Porta interna do container
+      # Exemplo: acesse via http://IP-DO-SEU-SERVIDOR:8080
+      - "8080:80"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - portalnet-network
+
+networks:
+  portalnet-network:
+    driver: bridge
